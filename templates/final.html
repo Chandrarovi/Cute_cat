@@ -13,7 +13,6 @@
 
 <div class="container">
 
-    <!-- HAPPY NEW YEAR TEXT -->
     <h1 class="newyear-text">Happy New Year 🎉</h1>
 
     <p class="sub-text">
@@ -21,7 +20,6 @@
         and many beautiful moments ahead ✨
     </p>
 
-    <!-- IMAGE GALLERY -->
     <div class="gallery">
         <div class="card"><img src="{{ url_for('static', filename='pic1.jpg') }}"></div>
         <div class="card"><img src="{{ url_for('static', filename='pic2.jpg') }}"></div>
@@ -31,7 +29,49 @@
 
     <p class="signature">— From me 💌</p>
 
+    <!-- 🎵 MUSIC HINT HERE -->
+    <p id="musicHint" class="music-hint">
+        Tap anywhere to play music 🎵
+    </p>
+
 </div>
+
+
+<!-- ❤️ Heart Particles -->
+<div class="hearts"></div>
+
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" loop>
+    <source src="{{ url_for('static', filename='song.mp3') }}" type="audio/mpeg">
+</audio>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const hint = document.getElementById("musicHint");
+    music.volume = 0;
+
+    function startMusic() {
+        music.play();
+
+        let vol = 0;
+        const fade = setInterval(() => {
+            if (vol < 0.6) {
+                vol += 0.05;
+                music.volume = vol;
+            } else {
+                clearInterval(fade);
+            }
+        }, 200);
+
+        hint.style.display = "none";
+
+        document.removeEventListener("click", startMusic);
+        document.removeEventListener("touchstart", startMusic);
+    }
+
+    document.addEventListener("click", startMusic);
+    document.addEventListener("touchstart", startMusic);
+</script>
 
 </body>
 </html>

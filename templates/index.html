@@ -124,6 +124,28 @@
         // after 6 tries → goes to /no
     });
 </script>
+<div class="hearts"></div>
+
+<script>
+    const heartsContainer = document.querySelector(".hearts");
+
+    function createHeart() {
+        const heart = document.createElement("span");
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        heart.style.fontSize = (12 + Math.random() * 18) + "px";
+        heart.style.opacity = Math.random();
+
+        heartsContainer.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
 
 </body>
 </html>
