@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy New Year ❤️</title>
+
+    <!-- Beautiful Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HAPPY NEW YEAR TEXT -->
+    <h1 class="newyear-text">Happy New Year 🎉</h1>
+
+    <p class="sub-text">
+        Wishing you love, happiness,
+        and many beautiful moments ahead ✨
+    </p>
+
+    <!-- IMAGE GALLERY -->
+    <div class="gallery">
+        <div class="card"><img src="{{ url_for('static', filename='pic1.jpg') }}"></div>
+        <div class="card"><img src="{{ url_for('static', filename='pic2.jpg') }}"></div>
+        <div class="card"><img src="{{ url_for('static', filename='pic3.jpg') }}"></div>
+        <div class="card"><img src="{{ url_for('static', filename='pic4.jpg') }}"></div>
+    </div>
+
+    <p class="signature">— From me 💌</p>
+
+</div>
+
+</body>
+</html>

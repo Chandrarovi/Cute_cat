@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hehe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <img src="{{ url_for('static', filename='hehe_cat.png') }}" class="cat">
+
+    <p class="text">
+        Hehe!I knew it. <br>
+        Click below for the surprise!!
+    </p>
+
+    <a href="/surprise" class="btn">Next</a>
+</div>
+
+</body>
+</html>

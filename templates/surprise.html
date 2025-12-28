@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Surprise 🎁</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <img src="{{ url_for('static', filename='gift_cat.png') }}"
+         class="cat gift"
+         onclick="window.location.href='/final'">
+
+    <p class="text">
+        Happy new year my >>>Friend!!! <br>
+        Click on the gift box!
+    </p>
+</div>
+
+</body>
+</html>
